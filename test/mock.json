@@ -1,0 +1,22 @@
+// testCase
+// An test json data with comments;
+{
+  // name
+  // this is a name for test
+  "name":"A ason data",
+  // the version
+  // version is mok version
+  "version":"0.0.0",
+  // age
+  // my age~~
+  "age": 26,
+  // api content
+  // as you known~
+  "content":[{
+    // yes, mok support a doc as markdown~
+    "doc": true,
+    // yeap, mock must support
+    "mock": true
+  }]
+}
+// haha

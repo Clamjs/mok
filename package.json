@@ -1,0 +1,32 @@
+{
+  "name": "mok",
+  "version": "0.0.0",
+  "description": "A mock data tools and API Doc tools for web developer",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Clamjs/mok.git"
+  },
+  "dependencies": {
+    "mace":"~2.0.0",
+    "json-parser": "~0.2.4",
+    "mockjs":"~0.1.4"
+  },
+  "keywords": [
+    "mock",
+    "test",
+    "data",
+    "api",
+    "tools",
+    "util"
+  ],
+  "author": "chenhao.lch",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/Clamjs/mok/issues"
+  },
+  "homepage": "https://github.com/Clamjs/mok"
+}
