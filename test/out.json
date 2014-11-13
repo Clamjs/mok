@@ -1,12 +1,8 @@
 {
   "name": "A ason dataA ason dataA ason dataA ason dataA ason dataA ason dataA ason data",
-  "version": "0.0.00.0.0",
-  "age": 6049016,
+  "version": "0.0.0",
+  "age": 9647049,
   "content": [
-    {
-      "doc": false,
-      "mock": false
-    },
     {
       "doc": true,
       "mock": false
@@ -14,18 +10,6 @@
     {
       "doc": false,
       "mock": false
-    },
-    {
-      "doc": false,
-      "mock": false
-    },
-    {
-      "doc": false,
-      "mock": false
-    },
-    {
-      "doc": false,
-      "mock": true
     }
   ]
 }

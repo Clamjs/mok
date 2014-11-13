@@ -1,18 +1,14 @@
-# 接口文档
--------
+#testCase
+---------
 
-
-## 接口描述
-
+An test json data with comments;haha
 
 字段 | 类型 | 名称 | 描述 | 规则 | 详情
 ---|------|------|------|------|---
- name  |  string  |  testCase  |  An test json data with comments; name this is a name for test  |  -  |  - 
+ name  |  string  |  name  |  this is a name for test  |  -  |  - 
  version  |  string  |  the version  |  version is mok version  |  -  |  - 
  age  |  number  |  age  |  my age~~  |  -  |  - 
  content  |  array  |  api content  |  as you known~  |  -  | @link content
-
-## 引用数据
 
 
 * content["0"]的描述
@@ -28,4 +24,4 @@
 ---|------|------|------|------|---
  0  |  object  |  -  |  -  |  -  | @link content["0"]
 
-*Powered By MockDoc* 
+*----------------Powered By MockDoc----------------------*
