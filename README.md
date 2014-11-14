@@ -71,4 +71,8 @@ var doc = require('mok').doc('/demo.json'/*, '/demo.md'*/);
 // The out put is an string with markdown format~
 ```
 
+## Connect
+-----
+
+You can connect me any time~
 
