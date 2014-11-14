@@ -40,14 +40,35 @@ An example:
   }
 }
 
-// mock.js
+// /tiny.json
 
+{
+  "json": true
+}
+
+// tiny-mock.json
+{
+  "name|1-5": "abc",
+  "age:0-100": 12,
+  "time": 123123123123123
+}
+
+// mock.js
+// This is for smart mock with file
 var data = require('mok').mok('/demo.json');
+// This is for smart mock with json 
+var data = require('mok').mock(require('/tiny.json'));
+// This is for mock with tiny mock json (just use mockjs.mock)
+var data = require('mok').mock(require('/tiny-mock.json'), true);
 ```
+More about mock you can get from [here](http://mockjs.com)
 
 ## Use doc
 
 ```
 var doc = require('mok').doc('/demo.json'/*, '/demo.md'*/);
+
+// The out put is an string with markdown format~
 ```
+
 
