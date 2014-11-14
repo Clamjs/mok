@@ -1,6 +1,6 @@
 {
   "name": "mok",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A mock data tools and API Doc tools for web developer",
   "main": "index.js",
   "scripts": {
