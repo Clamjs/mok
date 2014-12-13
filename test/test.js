@@ -1,9 +1,9 @@
 var mok = require('../');
-var util = require('mace')(module);
+var util = require('mace');
 
-util.log(mok.doc(__dirname + '/mock.json', __dirname + '/mock.md'));
 
-// mok.doc(__dirname + '/mock.json', __dirname + '/mock.md');
-// var json = mok.mock(__dirname + '/mock.json');
-// require('fs').writeFileSync(__dirname + '/out.json', JSON.stringify(json, '', 2));
-// util.log(json);
+var mockData = mok.mok(__dirname + '/mock.json');
+
+mok.doc(__dirname + '/mock.json', __dirname + '/mock.md');
+
+require('fs').writeFileSync(__dirname + '/out.json', JSON.stringify(mockData, '', 2));
