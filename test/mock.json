@@ -12,5 +12,24 @@
   /**
    * doc support
    */
-  "age|0-1000": 12
+  "age|0-1000": 12,
+  "array":[{
+    // name 1
+    "name":1
+  },{
+    // name 1
+    "name":1
+  },{
+    // name 1
+    "name":1
+  },{
+    // name 1
+    "name":1
+  },{
+    // name 1
+    "name":1
+  },{
+    // name 1
+    "name":1
+  }]
 }
