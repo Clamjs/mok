@@ -50,6 +50,8 @@ var project = util.Command(info.name, info.description, info.version)
       var stat = fs.statSync(source);
       if (stat.isDirectory()) {
         fs.readDir(source, function (file) {
+          // remove mockfile
+          if (!file.match(/\.json$/) || file.match(/\-mock\.json$/)) { return }
           var filepath = path.join(source, file);
           if (fs.statSync(filepath).isFile()) {
             try {
