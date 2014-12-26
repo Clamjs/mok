@@ -1,35 +1,34 @@
-// this is title
-// this is description
+// api : a.json
+// adfladsjklajd
 {
-  // name 
-  // haha name is the object name
-  "name|1-10": "abc",
-  // age
-  // age is the age
-  /*
-    of cause support multi line
-   */
-  /**
-   * doc support
-   */
-  "age|0-1000": 12,
-  "array":[{
-    // name 1
-    "name":1
-  },{
-    // name 1
-    "name":1
-  },{
-    // name 1
-    "name":1
-  },{
-    // name 1
-    "name":1
-  },{
-    // name 1
-    "name":1
-  },{
-    // name 1
-    "name":1
-  }]
+  // zhengchauaga
+  "code": 0,
+  // tishi
+  "msg":"success",
+  // fan
+  "data": {
+    // real data
+    "model": {
+      // user id 
+      "id": 123123,
+      // username
+      "name": 333,
+      // user age
+      "age": "sdadf",
+      // user children
+      "child":[{
+          // child1
+          "name": "adfasdf"
+        },{
+          // child1
+          "name": "sddfssssss"
+        },{
+          // child1
+          "name": "sddfs3333"
+        },{
+          // child1
+          "name": "sddfsdddd"
+        }]
+    }
+  }
 }

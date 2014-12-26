@@ -1,19 +1,34 @@
-#this is title
+#api : a.json
 ---------
 
-this is description
+adfladsjklajd
 
 字段 | 类型 | 名称 | 描述 | 规则 | 详情
 ---|------|------|------|------|---
- name  |  string  |  name  |  haha name is the object name  |  1-10  |  - 
- age  |  number  |  age  |  age is the age     of cause support multi line         doc support  |  0-1000  |  - 
- array  |  array  |  -  |  -  |  -  | @link {[string]} array
+ code  |  number  |  zhengchauaga  |  -  |  -  |  - 
+ msg  |  string  |  tishi  |  -  |  -  |  - 
+ data  |  object  |  fan  |  -  |  -  | @link {ObjectMap} data
 
 
-* array的描述
+* data["model"]["child"]的描述
 
 字段 | 类型 | 名称 | 描述 | 规则 | 详情
 ---|------|------|------|------|---
- name  |  number  |  name 1  |  -  |  -  |  - 
+ name  |  string  |  child1  |  -  |  -  |  - 
+
+* data["model"]的描述
+
+字段 | 类型 | 名称 | 描述 | 规则 | 详情
+---|------|------|------|------|---
+ id  |  number  |  user id  |  -  |  -  |  - 
+ name  |  number  |  username  |  -  |  -  |  - 
+ age  |  string  |  user age  |  -  |  -  |  - 
+ child  |  array  |  user children  |  -  |  -  | @link {[string]} data["model"]["child"]
+
+* data的描述
+
+字段 | 类型 | 名称 | 描述 | 规则 | 详情
+---|------|------|------|------|---
+ model  |  object  |  real data  |  -  |  -  | @link {ObjectMap} data["model"]
 
 *----------------Powered By MockDoc----------------------*

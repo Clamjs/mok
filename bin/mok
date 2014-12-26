@@ -25,7 +25,7 @@ var project = util.Command(info.name, info.description, info.version)
           if (fs.statSync(filepath).isFile()) {
             try {
               var basename = path.basename(filepath);
-              mok.doc(filepath, dest + basename + '.md');
+              mok.doc(filepath, dest + '/' + basename.replace(/\..*$/,'.md'));
             } catch(e) {
               util.error('Error to corver this file : %s.', filepath);
             }
@@ -33,10 +33,10 @@ var project = util.Command(info.name, info.description, info.version)
         });
       } else if (stat.isFile()){
         try {
-          var basename = path.basename(filepath);
-          mok.doc(source, dest + basename + '.md');
+          var basename = path.basename(source);
+          mok.doc(source, dest.replace(/\..*$/,'.md'));
         } catch(e) {
-          util.error('Error to corver this file : %s.', filepath);
+          util.error('Error to corver this file : %s.', source);
         }
       } else {
         util.error('Error: unknown source type!');
@@ -65,9 +65,9 @@ var project = util.Command(info.name, info.description, info.version)
         try {
           var data = mok.mok(source);
           var basename = path.basename(source);
-          fs.writeFileSync(dest + basename + '.json',JSON.stringify(data,'',2));
+          fs.writeFileSync(dest.replace(/\..*$/,'-mock.json'),JSON.stringify(data,'',2));
         } catch(e) {
-          util.error('Error to corver this file : %s.', filepath);
+          util.error('Error to corver this file : %s.', source);
         }
       } else {
         util.error('Error: unknown source type!');
