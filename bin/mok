@@ -2,6 +2,8 @@
 var util = require('mace');
 var fs = require('fs');
 var mok = require('../');
+var loader = require('../lib/loader.js');
+
 var CHARSET = 'UTF-8';
 process.stdout.setEncoding(CHARSET);
 process.stdin.setEncoding(CHARSET);
@@ -15,62 +17,34 @@ var project = util.Command(info.name, info.description, info.version)
 .option('-d, --dest', 'Dest dir or file', './mock/')
   .command('doc', 'output doc file', info.version)
     .action(function (source, dest) {
-      var path = require('path');
-      source = path.resolve(source);
-      dest = path.resolve(dest);
-      var stat = fs.statSync(source);
-      if (stat.isDirectory()) {
-        fs.readDir(source, function (file) {
-          var filepath = path.join(source, file);
-          if (fs.statSync(filepath).isFile()) {
-            try {
-              var basename = path.basename(filepath);
-              mok.doc(filepath, dest + '/' + basename.replace(/\..*$/,'.md'));
-            } catch(e) {
-              util.error('Error to corver this file : %s.', filepath);
-            }
-          }
-        });
-      } else if (stat.isFile()){
-        try {
-          var basename = path.basename(source);
-          mok.doc(source, dest.replace(/\..*$/,'.md'));
-        } catch(e) {
-          util.error('Error to corver this file : %s.', source);
-        }
-      } else {
-        util.error('Error: unknown source type!');
+      if (!dest) {
+        return util.error('dest can\'t be empty');
       }
+      mok.html(source, dest);
     })
-  .command('mok', "out put mock json", info.version)
+  .command('mock', "out put mock json", info.version)
     .action(function (source, dest) {
+      if (!dest) {
+        dest = source;
+      }
       var path = require('path');
       dest = path.resolve(dest);
       source = path.resolve(source);
       var stat = fs.statSync(source);
+      function _mockFile (file) {
+        if (!file.match(/\.json$/) || file.match(/\-mock\.json$/)) { return }  
+        var ret = mok.mock(loader.load(path.join(source, file)).json);
+        if (!fs.statSync(dest).isDirectory()) {
+          dest = path.dirname(dest);
+        }
+        fs.writeFileSync(path.join(dest, file.replace('.json','-mock.json')), JSON.stringify(ret,'',2));
+      }
       if (stat.isDirectory()) {
-        fs.readDir(source, function (file) {
-          // remove mockfile
-          if (!file.match(/\.json$/) || file.match(/\-mock\.json$/)) { return }
-          var filepath = path.join(source, file);
-          if (fs.statSync(filepath).isFile()) {
-            try {
-              var data = mok.mok(filepath);
-              var basename = path.basename(filepath);
-              fs.writeFileSync(dest + basename + '.json',JSON.stringify(data,'',2));
-            } catch(e) {
-              util.error('Error to corver this file : %s.', filepath);
-            }
-          }
+        fs.readdir(source, function (e, files) {
+          files.forEach(_mockFile);
         });
       } else if (stat.isFile()){
-        try {
-          var data = mok.mok(source);
-          var basename = path.basename(source);
-          fs.writeFileSync(dest.replace(/\..*$/,'-mock.json'),JSON.stringify(data,'',2));
-        } catch(e) {
-          util.error('Error to corver this file : %s.', source);
-        }
+        _mockFile(source);
       } else {
         util.error('Error: unknown source type!');
       }

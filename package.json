@@ -1,12 +1,12 @@
 {
   "name": "mok",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A mock data tools and API Doc tools for web developer",
   "main": "index.js",
   "scripts": {
     "test": "node test/test.js"
   },
-  "bin":{
+  "bin": {
     "mok": "./bin/mok"
   },
   "repository": {
@@ -14,9 +14,9 @@
     "url": "https://github.com/Clamjs/mok.git"
   },
   "dependencies": {
-    "mace":"~2.1.0",
+    "cpr": "^0.3.2",
     "json-parser": "~0.2.4",
-    "mockjs":"~0.1.4"
+    "mace": "~2.1.0"
   },
   "keywords": [
     "mock",

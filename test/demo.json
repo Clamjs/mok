@@ -1,0 +1,58 @@
+/*/introduce/detail?name=ruby*/
+/**
+ * 关于该接口的描述...
+ * */
+{
+    //名字
+    "name":{
+        "first":"ruby",
+        "last":"huang"
+    },
+    //兴趣爱好
+    "hobby":["roller skating","reading","swimming"],
+    //所在地
+    /*现居地址*/
+    "address":{
+        "area":"华东",
+        "region":"浙江"
+    },
+    //邮箱
+    /*注册邮箱*/
+    "email":"skysunshine99@126.com",
+    //头像
+    /*社区网站头像*/
+    "icon":"http://www.ruby.com/ruby.png_200x300.webp",
+    //喜欢的食物
+    "food":"cookie",
+    //注册日期
+    "date|yyyy-MM-dd":"2014-01-01",
+    //个人主页
+    /*个人中心地址*/
+    "space":"http://www.ruby.i",
+    //喜欢的一句话
+    "sentence":"Enjoy what you have",
+    //年龄
+    "age":27,
+    //网站权限
+    /*在该网站的权限*/
+    "powers":{
+        //社区权限
+        "community":{
+            //浏览权限
+            //是否可浏览社区文章
+            "read":true,
+            //发布权限
+            /*是否可以发布文章*/
+            "write":true
+        },
+        //管理权限
+        "manage":{
+            //查看用户权限
+            /*是否可查看用户信息*/
+            "read":true,
+            //操作用户权限
+            /*是否可以对用户进行增删改操作*/
+            "write":false
+        }
+    }
+}
