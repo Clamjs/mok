@@ -9,7 +9,7 @@
         "last":"huang"
     },
     //兴趣爱好
-    "hobby":["roller skating","reading","swimming"],
+    "hobby|1-20":["roller skating","reading","swimming"],
     //所在地
     /*现居地址*/
     "address":{
